@@ -1,0 +1,29 @@
+<customlist scriptid="customlist_stock_request_status">
+  <description></description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Stock Transfer Request Status</name>
+  <customvalues>
+    <customvalue scriptid="val_1360029_4125755_604">
+      <abbreviation>P</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Pending Approval</value>
+    </customvalue>
+    <customvalue scriptid="val_1360156_4125755_974">
+      <abbreviation>A</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Approved</value>
+    </customvalue>
+    <customvalue scriptid="val_1360030_4125755_416">
+      <abbreviation>T</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Transferred</value>
+    </customvalue>
+    <customvalue scriptid="val_1360157_4125755_330">
+      <abbreviation>R</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Rejected</value>
+    </customvalue>
+  </customvalues>
+</customlist>
