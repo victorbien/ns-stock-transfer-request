@@ -56,7 +56,12 @@ define([
         var resultSet = search.create({
             type: SR.RECORD.STOCK_REQUEST,
             filters: [['internalid', 'anyof', stockRequestId]],
-            columns: ['owner', 'lastmodifiedby']
+            columns: [
+                'owner',
+                'lastmodifiedby',
+                SR.FIELD.STOCK_REQUEST.FULFILLING_LOCATION,
+                SR.FIELD.STOCK_REQUEST.REQUESTING_LOCATION
+            ]
         }).run().getRange({ start: 0, end: 1 });
 
         if (!resultSet.length) {
@@ -66,7 +71,44 @@ define([
         var recipients = [];
         var ownerId = getEmployeeId(resultSet[0].getValue({ name: 'owner' }));
         var lastModifiedById = getEmployeeId(resultSet[0].getValue({ name: 'lastmodifiedby' }));
-        var candidateIds = [ownerId, lastModifiedById, getEmployeeId(additionalRecipientId)];
+        
+        var fulfillingLocationId = getEmployeeId(resultSet[0].getValue({
+            name: SR.FIELD.STOCK_REQUEST.FULFILLING_LOCATION
+        }));
+        
+        var fulfillingLocationEmail = null;
+
+        if (fulfillingLocationId) {
+            var location = search.lookupFields({
+                type: SR.LOCATION.ID,
+                id: fulfillingLocationId,
+                columns: [SR.LOCATION.FIELDS.EMAIL_ADDRESS]
+            });
+            fulfillingLocationEmail = location[SR.LOCATION.FIELDS.EMAIL_ADDRESS];
+        }
+
+         var requestingLocationId = getEmployeeId(resultSet[0].getValue({
+            name: SR.FIELD.STOCK_REQUEST.REQUESTING_LOCATION
+        }));
+        
+        var requestingLocationEmail = null;
+
+        if (requestingLocationId) {
+            var location = search.lookupFields({
+                type: SR.LOCATION.ID,
+                id: requestingLocationId,
+                columns: [SR.LOCATION.FIELDS.EMAIL_ADDRESS]
+            });
+            requestingLocationEmail = location[SR.LOCATION.FIELDS.EMAIL_ADDRESS];
+        }
+
+        var candidateIds = [
+            ownerId,
+            lastModifiedById,
+            getEmployeeId(additionalRecipientId),
+            fulfillingLocationEmail ? String(fulfillingLocationEmail).trim() : null,
+            requestingLocationEmail ? String(requestingLocationEmail).trim() : null
+        ];
 
         for (var i = 0; i < candidateIds.length; i++) {
             if (candidateIds[i] && recipients.indexOf(candidateIds[i]) === -1) {

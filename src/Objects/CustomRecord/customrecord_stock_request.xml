@@ -251,7 +251,7 @@
       <isformula>F</isformula>
       <ismandatory>T</ismandatory>
       <isparent>F</isparent>
-      <label>From Subsidiary</label>
+      <label>Fulfilling Store</label>
       <linktext></linktext>
       <maxlength></maxlength>
       <maxvalue></maxvalue>
@@ -292,7 +292,7 @@
       <isformula>F</isformula>
       <ismandatory>T</ismandatory>
       <isparent>F</isparent>
-      <label>To Subsidiary</label>
+      <label>Requesting Store</label>
       <linktext></linktext>
       <maxlength></maxlength>
       <maxvalue></maxvalue>
@@ -435,9 +435,81 @@
       <subtab></subtab>
     </customrecordcustomfield>
   </customrecordcustomfields>
+  <permissions>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_new_storelogin]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_new_storemgr]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_ap_officer]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_ar_officer]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_fin_controller]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_md_role]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_prod_mgr]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_prod_office]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_stores]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_pj_store_mgr]</permittedrole>
+      <restriction></restriction>
+    </permission>
+    <permission>
+      <permittedlevel>FULL</permittedlevel>
+      <permittedrole>[scriptid=customrole_anx_user_admins]</permittedrole>
+      <restriction></restriction>
+    </permission>
+  </permissions>
   <links>
     <link>
       <linkcategory>BASICTRANSACTIONSINVENTORY</linkcategory>
+      <linklabel></linklabel>
+      <linktasktype>LIST</linktasktype>
+    </link>
+    <link>
+      <linkcategory>ACCOUNTCENTERFINANCIALINVENTORY</linkcategory>
+      <linklabel></linklabel>
+      <linktasktype>LIST</linktasktype>
+    </link>
+    <link>
+      <linkcategory>SALESCENTERCUSTOMERSTRANSACTIONS</linkcategory>
+      <linklabel></linklabel>
+      <linktasktype>LIST</linktasktype>
+    </link>
+    <link>
+      <linkcategory>EXECUTIVEFINANCIALLISTS</linkcategory>
       <linklabel></linklabel>
       <linktasktype>LIST</linktasktype>
     </link>

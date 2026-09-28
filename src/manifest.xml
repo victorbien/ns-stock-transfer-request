@@ -7,5 +7,18 @@
             <feature required="true">CRM</feature>
             <feature required="true">SUBSIDIARIES</feature>
         </features>
+        <objects>
+            <object required="true">customrole_anx_new_storelogin</object>
+            <object required="true">customrole_anx_new_storemgr</object>
+            <object required="true">customrole_anx_pj_ap_officer</object>
+            <object required="true">customrole_anx_pj_ar_officer</object>
+            <object required="true">customrole_anx_pj_fin_controller</object>
+            <object required="true">customrole_anx_pj_md_role</object>
+            <object required="true">customrole_anx_pj_prod_mgr</object>
+            <object required="true">customrole_anx_pj_prod_office</object>
+            <object required="true">customrole_anx_pj_stores</object>
+            <object required="true">customrole_anx_pj_store_mgr</object>
+            <object required="true">customrole_anx_user_admins</object>
+        </objects>
     </dependencies>
 </manifest>

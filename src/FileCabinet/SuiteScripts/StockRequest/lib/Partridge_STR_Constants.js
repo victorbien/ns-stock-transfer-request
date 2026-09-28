@@ -43,6 +43,16 @@ define([], function () {
         STOCK_REQUEST_LINES: 'customrecord_stock_request_lines'
     };
 
+    var LOCATION = {
+        ID: 'location',
+        FIELDS: {
+            SUBSIDIARY: 'subsidiary',
+            INACTIVE: 'isinactive',
+            INTERNALID: 'internalid',
+            EMAIL_ADDRESS: 'custrecord_location_email_address'
+        }
+    };
+
     var FIELD = {
         STOCK_REQUEST: {
             REQUESTING_LOCATION: 'custrecord_sr_requesting_location',
@@ -117,6 +127,7 @@ define([], function () {
 
     return {
         RECORD: RECORD,
+        LOCATION: LOCATION,
         FIELD: FIELD,
         STATUS: STATUS,
         ROLE: ROLE,
